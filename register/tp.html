@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Radio Button</title>
+<style>
+  /* Hide the default radio button */
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* Create a custom radio button */
+  label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    background-color: #fff;
+  }
+
+  /* Style the radio button when it is checked */
+  input[type="radio"]:checked + label:before {
+    background-color: #3498db; /* Change this color to whatever you want */
+    border-color: #3498db;
+  }
+
+  /* Add an inner dot to represent the selected state */
+  input[type="radio"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff; /* Inner dot color */
+  }
+</style>
+</head>
+<body>
+
+<form>
+  <input type="radio" id="option1" name="option" value="1">
+  <label for="option1">Option 1</label>
+  <br>
+  <input type="radio" id="option2" name="option" value="2">
+  <label for="option2">Option 2</label>
+  <br>
+  <input type="radio" id="option3" name="option" value="3">
+  <label for="option3">Option 3</label>
+</form>
+
+</body>
+</html>
